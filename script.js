@@ -1,14 +1,20 @@
 "use strict"
 
-const container = document.querySelector(".container")
-const text = document.querySelector(".text")
-// 7500  milliseconds = 7.5 seconds
-const totalTime = 7500
+const container = document.getElementById("container")
+const text = document.getElementById("text")
+const pointerContainer = document.getElementById("pointerContainer")
+// 8500  milliseconds = 8.5 seconds
+const totalTime = 9500
 const breatheTime = (totalTime / 5) * 2
 const holdTime = totalTime / 5
+let animationRunning = false
+let 
 
 // Immediately running the function on page load.
-breatheAnimation()
+
+function setStyles() {
+  pointerContainer.style.animation = "rotate 9.5s linear forwards infinite"
+}
 
 function breatheAnimation() {
   text.innerHTML = "Breathe In."
@@ -25,5 +31,7 @@ function breatheAnimation() {
   }, breatheTime)
 }
 
-// Runs the function every 7 seconds (or for the specified time).
-setInterval(breatheAnimation(), totalTime)
+while (animationRunning) {
+  // Runs the function every 7 seconds (or for the specified time).
+  setInterval(breatheAnimation, totalTime)
+}
