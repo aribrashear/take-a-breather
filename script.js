@@ -8,7 +8,6 @@ const totalTime = 9500
 const breatheTime = (totalTime / 5) * 2
 const holdTime = totalTime / 5
 let animationRunning = false
-let 
 
 // Immediately running the function on page load.
 
@@ -17,8 +16,10 @@ function setStyles() {
 }
 
 function breatheAnimation() {
+  animationRunning = true
   text.innerHTML = "Breathe In."
   container.className = "container grow"
+  pointerContainer.style.animation = "rotate 9.5s linear forwards infinite"
 
   // Takes in a function to be executed, and a timer that will count (in ms) down to execute.
   setTimeout(() => {
